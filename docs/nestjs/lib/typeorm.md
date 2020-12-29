@@ -83,9 +83,9 @@ Entity is a class that maps to a database table. You can create an entity by def
 
 Create your entity inside `src/entities` directory by following the guideline:
 
-- Filename must be in suffix `*.entity.ts` with kebab-case: `user.entity.ts`.
-- Class must be singular and PascalCase: `class User {}`
-- `@Entity()` decorator table name must be PascalCase and plural: `@Entity('Users')`.
+- Filename must be in suffix `*.entity.ts` with kebab-case. Ex: `user.entity.ts`.
+- Class must be singular and PascalCase. Ex: `class User {}`
+- `@Entity()` decorator table name must be PascalCase and plural. Ex: `@Entity('Users')`.
 
 ```ts title="src/entities/user.entity.ts"
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';

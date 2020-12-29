@@ -10,7 +10,7 @@ A good set of extensions can make working with a particular workspace or program
 
 ### Workspace Recommended Extensions
 
-Create an `.vscode/extensions.json` file in the workspace folder and populate it with a list of extensions you want to include or check in the [directory](../.vscode/extensions.json) of the core project.
+Create an `.vscode/extensions.json` file in the workspace folder and populate it with a list of extensions you want to include or check in the core project.
 
 _example:_
 

@@ -7,7 +7,7 @@ title: Nest Boilerplate Project
 
 Nest Boilerplate Project is powered by [Nest](https://nestjs.com/)
 
-Please use a template from [README.sample.md](README.sample.md) for your real project README.md. An example can be found in [README.example.md](README.example.md)
+Please use a template from [README.sample.md](#) for your real project README.md. An example can be found in [README.example.md](#)
 
 ## 📋 Introduction
 
@@ -77,14 +77,14 @@ Structure your solution by self-contained components
 
 ### Built-in Modules
 
-- [Config](docs/projects/config.md)
-- [Firebase Admin](docs/projects/firebase-admin.md)
-- [Google Cloud Storage](docs/projects/google-cloud-storage.md)
-- [Mailer](docs/projects/mailer.md)
-- [Mongoose](docs/projects/mongoose.md)
-- [Redis](docs/projects/redis.md)
-- [S3](docs/projects/s3.md)
-- [Sequelize](docs/projects/sequelize.md)
+- Config
+- Firebase Admin
+- Google Cloud Storage
+- Mailer
+- Mongoose
+- Redis
+- S3
+- Sequelize
 - Socket
 - Authentication
 - Cron Scheduler
@@ -129,7 +129,7 @@ async function bootstrap() {
     .setContact(
       'Dominic Preap',
       'https://www.facebook.com/preap.chanoudom',
-      'preapchanoudom@gmail.com',
+      'preapchanoudom@gmail.com'
     )
     .setVersion('1.0')
     .addBearerAuth()
@@ -148,13 +148,13 @@ This file controls all of your module. The required module for this file is `Api
 - `ConfigModule` stores and validates environment file `.env`.
 
 ```ts
-import {Module} from '@nestjs/common';
+import { Module } from '@nestjs/common';
 
-import {ConfigModule} from '@lib/config';
-import {ApiModule} from './api/api.module';
+import { ConfigModule } from '@lib/config';
+import { ApiModule } from './api/api.module';
 
 @Module({
-  imports: [ApiModule, ConfigModule],
+  imports: [ApiModule, ConfigModule]
 })
 export class ApplicationModule {}
 ```

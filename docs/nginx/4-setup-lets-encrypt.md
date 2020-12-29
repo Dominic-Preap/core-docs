@@ -15,7 +15,7 @@ To follow this tutorial, you will need:
 - One Ubuntu 18.04 server
 - A fully registered domain name.
 - DNS records set up for your server. An `A` record with `example.com` pointing to your server's public IP address
-- [Nginx installed](install-nginx.md) and [have a config file](nginx-configuration.md). Ex: `/etc/nginx/sites-available/example.com`.
+- [Nginx installed](nginx-1) and [have a config file](nginx-3). Ex: `/etc/nginx/sites-available/example.com`.
 
 ```nginx
 server {

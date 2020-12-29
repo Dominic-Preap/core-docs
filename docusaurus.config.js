@@ -56,7 +56,7 @@ module.exports = {
             },
             {
               label: 'Second Doc',
-              to: 'docs/doc2',
+              to: 'docs/doc1',
             },
           ],
         },
@@ -100,8 +100,7 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc. Built with Docusaurus.`,
     },
     prism: {
-      theme: require('prism-react-renderer/themes/github'),
-      darkTheme: require('prism-react-renderer/themes/vsDark'),
+      theme: require('prism-react-renderer/themes/vsDark'),
     },
   },
   presets: [

@@ -28,17 +28,18 @@ Structure your solution by self-contained components
 
 ### Built-in Modules
 
-- [Config](docs/projects/config.md)
-- [Firebase Admin](docs/projects/firebase-admin.md)
-- [Google Cloud Storage](docs/projects/google-cloud-storage.md)
-- [Mailer](docs/projects/mailer.md)
-- [Mongoose](docs/projects/mongoose.md)
-- [Redis](docs/projects/redis.md)
-- [S3](docs/projects/s3.md)
-- [Sequelize](docs/projects/sequelize.md)
+- [Config](/docs/nestjs/lib/config)
+- Firebase Admin
+- [Google Cloud Storage](/docs/nestjs/lib/google-cloud-storage)
+- Mailer
+- Mongoose
+- Redis
+- S3
+- Sequelize
 - Socket
 - Authentication
 - Cron Scheduler
 - Multer Upload
 - Social
+- [Typeorm](/docs/nestjs/lib/typeorm)
 - Excel

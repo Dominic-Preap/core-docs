@@ -8,7 +8,7 @@ sidebar_label: Introduction
 
 Nest Boilerplate Project is powered by [Nest](https://nestjs.com/)
 
-Please use a template from [README.sample.md](README.sample.md) for your real project README.md. An example can be found in [README.example.md](README.example.md)
+Please use a template from [README.sample.md](#) for your real project README.md. An example can be found in [README.example.md](#)
 
 ## 📋 Introduction
 
