@@ -23,7 +23,7 @@ module.exports = {
   },
 
   docs: {
-    Test: ['company/issues-labels', 'company/pull-request-template'],
+    // Test: ['company/issues-labels', 'company/pull-request-template'],
     '📝 Resources': [
       'resources/guide',
       'resources/website-documentation',
