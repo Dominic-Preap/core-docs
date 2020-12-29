@@ -13,11 +13,11 @@ Here are the main packages we are using in our own project.
 
 ## Middleware
 
-- [compression]()
-- [cors]()
-- [csurf]()
-- [express-rate-limit]()
-- [helmet]()
+- compression
+- cors
+- csurf
+- express-rate-limit
+- helmet
 - [morgan](https://www.npmjs.com/package/morgan) HTTP request logger middleware for node.js
 - [multer](https://www.npmjs.com/package/multer) a node.js middleware for handling multipart/form-data, which is primarily used for uploading files
 

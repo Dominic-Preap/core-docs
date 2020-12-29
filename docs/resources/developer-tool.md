@@ -26,7 +26,7 @@ sidebar_label: Developer Tools
 - [CloudBerry Explorer](https://www.cloudberrylab.com/explorer.aspx) a user interface to Amazon S3 allowing to manage files across your S3 buckets
 - [PuTTY](https://www.putty.org/) is an SSH and telnet client, developed originally by Simon Tatham for the Windows platform
 
-## Database Tools
+## Database
 
 - [MySQL Compare](https://www.red-gate.com/products/mysql/mysql-compare/) compare and deploy MySQL schema changes
 - [DBeaver](https://dbeaver.io/download/) free multi-platform database tool for developers, supports: MySQL, Postgre, Oracle, SQL Server, etc.

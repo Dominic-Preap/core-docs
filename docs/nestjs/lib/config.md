@@ -1,5 +1,5 @@
 ---
 id: config
-title: Config
-sidebar_label: Config
+title: '@lib/config'
+sidebar_label: '@lib/config'
 ---

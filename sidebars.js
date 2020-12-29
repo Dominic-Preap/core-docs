@@ -17,11 +17,13 @@ module.exports = {
     'Built-In Modules': [
       'nestjs/lib/config',
       'nestjs/lib/google-cloud-storage',
+      'nestjs/lib/graphql-request',
       'nestjs/lib/typeorm',
     ],
   },
 
   docs: {
+    Test: ['company/issues-labels', 'company/pull-request-template'],
     '📝 Resources': [
       'resources/guide',
       'resources/website-documentation',
