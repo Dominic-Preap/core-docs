@@ -1,10 +1,14 @@
 ---
 id: typeorm
-title: '@lib/typeorm'
-sidebar_label: '@lib/typeorm'
+title: 'Typeorm'
+sidebar_label: 'Typeorm'
 ---
 
 `@lib/typeorm` is a small module sit on top of [`@nestjs/typeorm`](https://docs.nestjs.com/techniques/database#typeorm-integration) and [`typeorm`](https://typeorm.io/#/) to make integration with SQL a bit easier. Although you can fully customize the provider for your own need.
+
+:::info
+This module required `@lib/config` in order to work properly. To learn more, see [here](/docs/nestjs/lib/config).
+:::
 
 ## Quick Setup
 
@@ -37,17 +41,19 @@ Then, make copy of `src/lib/typeorm`, `src/entities`, `src/repositories` to your
 ├─ 📁entities                 # Contain entities (classes that maps to a database table)
 │   ├─ 📄user.entity.ts
 │   └─ 📄index.ts
+│
 ├─ 📁repositories             # Contain repositories
 │   ├─ 📄user.repository.ts
 │   └─ 📄index.ts
+│
 ├─ 📁lib/typeorm
 │   ├─ 📄typeorm.dto.ts       # Contain ENV configuration
 │   ├─ 📄typeorm.module.ts    # Contain declaring module
-│   ├─ 📄typeorm.service.ts   # Contain service providers
-│   └─ 📄index.ts             # Contain export methods
+│   ├─ 📄typeorm.service.ts   # Contain service provider
+│   └─ 📄index.ts             # Contain exposing API
 ```
 
-Next, add `TypeOrmModule` into your `app.module.ts`.
+Next, import `TypeOrmModule` into your `app.module.ts`.
 
 ```ts title="src/app.module.ts"
 import { ConfigModule } from '@lib/config';
@@ -84,14 +90,14 @@ Entity is a class that maps to a database table. You can create an entity by def
 Create your entity inside `src/entities` directory by following the guideline:
 
 - Filename must be in suffix `*.entity.ts` with kebab-case. Ex: `user.entity.ts`.
-- Class must be singular and PascalCase. Ex: `class User {}`
+- Class must be singular, PascalCase with suffix `*Entity`. Ex: `class UserEntity {}`
 - `@Entity()` decorator table name must be PascalCase and plural. Ex: `@Entity('Users')`.
 
 ```ts title="src/entities/user.entity.ts"
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('Users')
-export class User {
+export class UserEntity {
   @PrimaryGeneratedColumn()
   id!: number;
 
@@ -109,7 +115,7 @@ export class User {
 Then import the entity to `index.ts` for making it registered through `@lib/typeorm`.
 
 ```ts title="src/entities/index.ts"
-export { User } from './user.entity';
+export { UserEntity } from './user.entity';
 ```
 
 ### Custom Repository
@@ -125,10 +131,10 @@ Create your repository inside `src/repositories` directory by following the guid
 ```ts title="src/repositories/user.repository.ts"
 import { EntityRepository, Repository } from 'typeorm';
 
-import { User } from '@entities';
+import { UserEntity } from '@entities';
 
-@EntityRepository(User)
-export class UserRepository extends Repository<User> {
+@EntityRepository(UserEntity)
+export class UserRepository extends Repository<UserEntity> {
   async $findByEmail(email: string) {
     // ...
   }
@@ -174,8 +180,8 @@ interface FindActiveUsersResult {
 ```
 
 ```ts title="src/repositories/user.repository.ts"
-@EntityRepository(User)
-export class UserRepository extends Repository<User> {
+@EntityRepository(UserEntity)
+export class UserRepository extends Repository<UserEntity> {
   async $findActiveUsers(
     opt: FindActiveUsersOption
   ): Promise<FindActiveUsersResult> {
@@ -186,21 +192,21 @@ export class UserRepository extends Repository<User> {
 
 ### Repository Injection
 
-We can inject`UsersRepository` or `User` into the ExampleService using the `@InjectRepository()` decorator. For more, check [Typeorm](https://docs.nestjs.com/techniques/database#repository-pattern) section in [Nest](https://docs.nestjs.com/) docs.
+We can inject`UserRepository` or `UserEntity` into the ExampleService using the [`@InjectRepository()`](https://docs.nestjs.com/techniques/database#repository-pattern) decorator. For more, check [Typeorm](https://docs.nestjs.com/techniques/database#repository-pattern) section in [Nest](https://docs.nestjs.com/) docs.
 
 ```ts title="example.service.ts"
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
-import { User } from '@entities';
+import { UserEntity } from '@entities';
 import { UserRepository } from '@repositories';
 
 @Injectable()
 export class ExampleService {
   constructor(
-    @InjectRepository(User)
-    private userRepository: Repository<User>,
+    @InjectRepository(UserEntity)
+    private userRepository: Repository<UserEntity>,
     // -- OR--
     @InjectRepository(UserRepository)
     private userRepository: UserRepository
@@ -211,3 +217,7 @@ export class ExampleService {
   }
 }
 ```
+
+## API
+
+### `TypeOrmModule`

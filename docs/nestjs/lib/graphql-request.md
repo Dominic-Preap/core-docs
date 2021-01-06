@@ -1,12 +1,16 @@
 ---
 id: graphql-request
-title: '@lib/graphql-request'
-sidebar_label: '@lib/graphql-request'
+title: 'Graphql Request'
+sidebar_label: 'Graphql Request'
 ---
 
 `@lib/graphql-request` is minimal GraphQL client for simply apps. For more, check [`prisma-labs/graphql-request`](https://github.com/prisma-labs/graphql-request#graphql-request).
 
 It is a best practice to name your graphql request service rather than the default `@lib/graphql-request`. For example, if your service name is **Account Service**, you shall name it as `@lib/account-service`.
+
+:::info
+This module required `@lib/config` in order to work properly. To learn more, see [here](/docs/nestjs/lib/config).
+:::
 
 ## Quick Setup
 
@@ -37,16 +41,16 @@ Then, make copy of `src/lib/graphql-request` to your project.
 ```bash
 •
 ├─ 📁graphql-request
-│   ├─ 📄graphql-request.constant.ts    # Contain provider tokens
-│   ├─ 📄graphql-request.decorator.ts   # Contain dependency injections
+│   ├─ 📄graphql-request.constant.ts    # Contain provider token
+│   ├─ 📄graphql-request.decorator.ts   # Contain dependency injection
 │   ├─ 📄graphql-request.dto.ts         # Contain ENV configuration
 │   ├─ 📄graphql-request.module.ts      # Contain declaring module
-│   ├─ 📄graphql-request.provider.ts    # Contain service providers
+│   ├─ 📄graphql-request.provider.ts    # Contain service provider
 │   ├─ 📄graphql-request.ts             # Contain your request API
-│   └─ 📄index.ts                       # Contain export methods
+│   └─ 📄index.ts                       # Contain exposing API
 ```
 
-Next, add `GraphQLRequestModule` into your `app.module.ts`.
+Next, import `GraphQLRequestModule` into your `app.module.ts`.
 
 ```ts title="src/app.module.ts"
 import { ConfigModule } from '@lib/config';
@@ -119,3 +123,11 @@ export class GraphQLRequest {
   }
 }
 ```
+
+## API
+
+### `GraphQLRequestModule`
+
+### `@InjectGraphQLRequest()`
+
+### `GraphQLRequest`

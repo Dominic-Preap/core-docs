@@ -16,8 +16,12 @@ module.exports = {
     ],
     'Built-In Modules': [
       'nestjs/lib/config',
+      'nestjs/lib/firebase-admin',
       'nestjs/lib/google-cloud-storage',
       'nestjs/lib/graphql-request',
+      'nestjs/lib/ioredis',
+      'nestjs/lib/mailer',
+      'nestjs/lib/mongoose',
       'nestjs/lib/typeorm',
     ],
   },
