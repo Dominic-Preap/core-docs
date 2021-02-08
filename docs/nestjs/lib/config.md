@@ -1,7 +1,7 @@
 ---
 id: config
 title: 'Configuration'
-sidebar_label: 'Configuration'
+sidebar_label: '⚙️ Configuration'
 ---
 
 `@lib/config` is one of the most important built-in modules. It validates your `.env` params that required for a specific module. If the env is missing or wrong input, the app cannot be started. It is mostly used for another built-in modules, but you can also inject it into your module if you wish.

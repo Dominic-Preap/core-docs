@@ -26,6 +26,8 @@
     "**/dist": true
   },
   "cSpell.words": [
+    "sendbird",
+    "twilio",
     "typeorm"
   ]
 }

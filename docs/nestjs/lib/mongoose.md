@@ -1,7 +1,7 @@
 ---
 id: mongoose
 title: 'Mongoose'
-sidebar_label: 'Mongoose'
+sidebar_label: '🐻 Mongoose'
 ---
 
 `@lib/mongoose` is wrapper module based on [Mongoose](https://github.com/Automattic/mongoose/) for non-relational database.
@@ -157,7 +157,7 @@ export const UserModel = getModelForClass(UserSchema, {
 
 ### Static Method Interface
 
-When working with custom repository, your methods might need many parameters and result type. As a rule of thumb on Typescript, create interface file for each repository follow the guideline:
+When working with custom repository, your methods might need many parameters and result type. As a rule of thumb on Typescript, create interface file for each repository by following the guideline:
 
 - Interface filename should store in a new directory `src/models/interfaces/`.
 - Interface filename must be the consistent name with schema.
@@ -208,10 +208,7 @@ import { UserModel } from '@models';
 
 @Injectable()
 export class ExampleService {
-  constructor(
-    @InjectModel(UserModel)
-    private userModel: typeof UserModel
-  ) {}
+  constructor(@InjectModel(UserModel) private userModel: typeof UserModel) {}
 
   doSomething() {
     // Do stuff...

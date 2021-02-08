@@ -1,7 +1,7 @@
 ---
 id: ioredis
 title: 'IORedis'
-sidebar_label: 'IORedis'
+sidebar_label: '⚡️ IORedis'
 ---
 
 `@lib/ioredis` is wrapper module based on [ioredis](https://github.com/luin/ioredis). It also provides pub/sub feature mostly [notifications for a reminder service](https://medium.com/@micah1powell/using-redis-keyspace-notifications-for-a-reminder-service-with-node-c05047befec3).

@@ -1,7 +1,7 @@
 ---
 id: typeorm
 title: 'Typeorm'
-sidebar_label: 'Typeorm'
+sidebar_label: '🗄️ Typeorm'
 ---
 
 `@lib/typeorm` is a small module sit on top of [`@nestjs/typeorm`](https://docs.nestjs.com/techniques/database#typeorm-integration) and [`typeorm`](https://typeorm.io/#/) to make integration with SQL a bit easier. Although you can fully customize the provider for your own need.
@@ -153,7 +153,7 @@ export { UserRepository } from './user.repository';
 
 ### Repository Interface
 
-When working with custom repository, your methods might need many parameters and result type. As a rule of thumb on Typescript, create interface file for each repository follow the guideline:
+When working with custom repository, your methods might need many parameters and result type. As a rule of thumb on Typescript, create interface file for each repository by following the guideline:
 
 - Interface filename should store in a new directory `src/repositories/interfaces/`.
 - Interface filename must be the consistent name with repository.

@@ -1,7 +1,7 @@
 ---
 id: google-cloud-storage
 title: 'Google Cloud Storage'
-sidebar_label: 'Google Cloud Storage'
+sidebar_label: '☁️ Google Cloud Storage'
 ---
 
 `@lib/google-cloud-storage` is wrapper module based on [Google Cloud Storage](https://github.com/GoogleCloudPlatform/google-cloud-node).

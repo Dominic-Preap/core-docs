@@ -1,7 +1,7 @@
 ---
 id: mailer
 title: 'Mailer'
-sidebar_label: 'Mailer'
+sidebar_label: '✉️ Mailer'
 ---
 
 `@lib/mailer` is a mailer module containing [NodeMailer](https://github.com/nodemailer/nodemailer). This module only have one method `.send()`. You can also add a different mailer service such as [Sendgrid](https://github.com/sendgrid/sendgrid-nodejs) and [Mandrill](https://mandrillapp.com/api/docs/index.nodejs.html).
@@ -78,16 +78,32 @@ MAILER_MANDRILL_API_KEY=
 
 You can use `@InjectMailer()` decorator to inject `Mailer` into your service.
 
-```ts title="example.service.ts"
+:::info
+It is a best practice to create a `SharedModule` and `MailerService` to handle all the mailer methods then export the service to use in other module.
+:::
+
+```ts title="src/api/shared/mailer.service.ts"
 import { Injectable } from '@nestjs/common';
+import { resolve } from 'path';
+import { compileFile } from 'pug';
+
 import { InjectMailer, Mailer } from '@lib/mailer';
 
 @Injectable()
-export class ExampleService {
+export class MailerService {
   constructor(@InjectMailer() private readonly mailer: Mailer) {}
 
-  async doSomething() {
-    await this.mailer.send(/* options */);
+  async sendResetPassword(email: string, code: string) {
+    // Pug is a recommendation
+    const template = resolve('.', 'assets', 'templates', 'reset-password.pug');
+    const compiledFunction = compileFile(template);
+
+    await this.mailer.send({
+      from: 'sender@server.com',
+      to: email,
+      subject: 'Reset Password',
+      html: compiledFunction({ code })
+    });
   }
 }
 ```
@@ -102,11 +118,11 @@ export class ExampleService {
 
 `Mailer` class contain only one method `send(options)` and can have fields:
 
-- **from**: The email address of the sender. All email addresses can be plain `sender@server.com` or formatted `"Sender Name" sender@server.com`.
-- **to**: Comma separated list or an array of recipients email addresses.
-- **subject**: The subject of the email.
-- **html**: The HTML version of the message as an Unicode string, Buffer, Stream.
-- **attachments**: An array of attachment objects
+- `from:` The email address of the sender. All email addresses can be plain `sender@server.com` or formatted `"Sender Name" sender@server.com`.
+- `to:` Comma separated list or an array of recipients email addresses.
+- `subject:` The subject of the email.
+- `html:` The HTML version of the message as an Unicode string, Buffer, Stream.
+- `attachments:` An array of attachment objects
 
 ```ts
 this.mailer.send({

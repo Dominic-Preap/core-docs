@@ -1,7 +1,7 @@
 ---
 id: firebase-admin
 title: 'Firebase Admin'
-sidebar_label: 'Firebase Admin'
+sidebar_label: '🔥 Firebase Admin'
 ---
 
 `@lib/firebase-admin` is wrapper module based on [Firebase Admin Node.js SDK](https://github.com/firebase/firebase-admin-node).

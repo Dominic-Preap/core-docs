@@ -1,7 +1,7 @@
 ---
 id: graphql-request
 title: 'Graphql Request'
-sidebar_label: 'Graphql Request'
+sidebar_label: '✡️ Graphql Request'
 ---
 
 `@lib/graphql-request` is minimal GraphQL client for simply apps. For more, check [`prisma-labs/graphql-request`](https://github.com/prisma-labs/graphql-request#graphql-request).
