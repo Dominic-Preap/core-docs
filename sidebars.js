@@ -13,10 +13,23 @@ module.exports = {
       'company/names',
       {
         'Source control': [
-          'company/managing-labels',
-          'company/issue-and-pr-templates',
+          'company/source-control/labels',
+          'company/source-control/issue-and-pr-templates',
+          'company/source-control/documentation',
+          'company/source-control/ci',
+          'company/source-control/checklist',
+        ]
+      },
+      {
+        'Code': [
+          'company/code/styles',
+          'company/code/standard',
+          'company/code/reviews',
+          'company/code/testing',
+          'company/code/dependencies',
         ]
       }
+
 
     ]
   },
