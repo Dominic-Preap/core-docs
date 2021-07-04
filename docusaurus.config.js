@@ -30,6 +30,12 @@ module.exports = {
           position: 'left',
         },
         {
+          to: 'docs/company/names',
+          activeBasePath: 'docs/company',
+          label: 'Company',
+          position: 'left',
+        },
+        {
           to: 'docs/nestjs/getting-started/introduction',
           activeBasePath: 'docs/nestjs',
           label: 'Core',

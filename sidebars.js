@@ -8,6 +8,18 @@
  */
 
 module.exports = {
+  topic: {
+    'Starting a new project': [
+      'company/names',
+      {
+        'Source control': [
+          'company/managing-labels',
+          'company/issue-and-pr-templates',
+        ]
+      }
+
+    ]
+  },
   nestjs: {
     'Getting Started': [
       'nestjs/getting-started/introduction',
